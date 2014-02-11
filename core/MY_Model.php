@@ -453,7 +453,7 @@ class MY_Model extends CI_Model
             else
             {
                 $relationship = $key;
-                $options = $value;
+                $options = array_merge($value, array('model' => $key.'_model'));
             }
 
             if (in_array($relationship, $this->_with))
